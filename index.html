@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian Bartel</title>
+    <style>
+        body {
+            background-color: #1e1e2e; /* Dark background color */
+            color: #cdd6f4; /* Light text color */
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #181825; /* Slightly lighter background for the card */
+            border: 2px solid #89b4fa; /* Border color */
+            padding: 20px;
+            width: 800px;
+            min-height: 600px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 2px #585b70; /* Box shadow for some depth */
+        }
+        .card h1 {
+            color: #f38ba8; /* Heading color */
+        }
+        .card p, .card h2 {
+            color: #cdd6f4; /* Paragraph text color */
+            margin: 10px 0;
+        }
+        .collapsible {
+            color: #cdd6f4;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+        }
+        .collapsible:hover {
+            color: #89b4fa; /* Hover color */
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #282a36;
+            text-align: left;
+        }
+        .content p::before {
+            content: "# ";
+            color: #f38ba8;
+        }
+        .content a {
+            color: #b4befe;
+            text-decoration: underline;
+        }
+        .content a:hover {
+            color: #89b4fa; 
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Julian Bartel</h1>
+        <p>Software Developer & Nerd  //  Musician & Metalhead</p>        
+
+        <div class="collapsible">&gt; tech stack</div>
+        <div class="content">
+            <p>Expert in .NET with C#</p>
+            <p>Intermediate knowledge in K8s, helm, linux</p>
+            <p>CI/CD experience with Azure DevOps and Gitlab</p>
+            <p>Rider user</p>
+            <p>Strong clean code commitment</p>
+        </div>
+
+        <div class="collapsible">&gt; music</div>
+        <div class="content">
+            <p>Keyboard player</p>
+            <p>Almost all kinds of metal (alternative, power, symphonic, progressive)</p>
+            <p>Member of <a href="https://betweentheseasons.de" target="_blank">Between The Seasons </a></p>
+        </div>
+
+        <div class="collapsible">&gt; social and contact</div>
+        <div class="content">
+            <p><a href="mailto:mail@julian-bartel.net">mail@julian-bartel.net</a> (<a href="https://keys.openpgp.org/vks/v1/by-fingerprint/FAD0373E533AAD51E4B9C8AAA39EDC2F1D13763A">PGP key</a>)</p>
+            <p><a href="https://github.com/julianbartel">github</a></p>
+            <p><a href="https://gitlab.com/julianbartel">gitlab</a></p>
+            <p><a href="https://mastodon.social/@julianbartel" rel="me">mastodon</a></p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
